@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Tartaruguita</title>
+    <title>TV Tartaruga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css">
     <style>
         body, html {
@@ -133,6 +133,26 @@
         }
         /* Ajustes responsivos para dispositivos móveis */
     @media (max-width: 480px) {
+ 
+.channel-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas por linha */
+        gap: 10px; /* Espaçamento entre as logos */
+        justify-items: center;
+    }
+
+    .channel-logo img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+    }
+
+    .channel-logo {
+        font-size: 0; /* Esconde o texto dos canais */
+    }
+}
+
+
     .player-section {
         width: 100%; /* Ocupa toda a largura */
         height: 40vh; /* 40% da altura da tela */
