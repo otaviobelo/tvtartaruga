@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Tartaruguita</title>
+    <title>TV Tartaruga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css">
     <style>
         body, html {
@@ -307,7 +307,7 @@
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     // Se for mobile, ativa mute para permitir autoplay
-    let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${isMobile ? 1 : 0}&controls=1&enablejsapi=1`;
+    let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${isMobile ? 1 : 0}&modestbranding=1&rel=0controls=1&enablejsapi=1`;
 
     if (playlistId) {
         embedUrl += `&list=${playlistId}&loop=1&playlist=${playlistId}`;
