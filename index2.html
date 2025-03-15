@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Tartaruga</title>
+    <title>TV Tartaruguita</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css">
     <style>
         body, html {
@@ -139,25 +139,41 @@
             opacity: 1;
         }
         /* Ajustes responsivos para dispositivos móveis */
-    @media (max-width: 480px) {
- 
-.channel-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas por linha */
-        gap: 10px; /* Espaçamento entre as logos */
-        justify-items: center;
+ @media (max-width: 480px) {
+    .player-section {
+        width: 100% !important;  /* Ocupa toda a largura */
+        height: 35vh !important; /* 35% da altura da tela */
+        left: 0 !important;
+        transform: none !important;
+        position: fixed !important;
+        top: 74px !important; /* Mantém a posição abaixo do header */
+        z-index: 5 !important;
     }
 
-    .channel-logo img {
-        width: 60px;
-        height: 60px;
-        border-radius: 8px;
+    .player-container {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
     }
 
-    .channel-logo {
-        font-size: 0; /* Esconde o texto dos canais */
+    .video-js, #youtubePlayer {
+        width: 100% !important; /* Ocupa toda a largura */
+        height: 100% !important; /* Ocupa toda a altura */
+        object-fit: cover !important; /* Garante que o vídeo preencha */
+    }
+
+    #youtubePlayer iframe {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        top: 0;
+        left: 0;
     }
 }
+
 
 
     .player-section {
