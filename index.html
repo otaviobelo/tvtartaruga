@@ -27,25 +27,32 @@
             width: 100%;
             z-index: 10;
         }
-        .player-section {
-            position: fixed;  
-            top: 74px; /* Altura do header */
-            left: 50%; /* Centraliza a seção */
-            transform: translateX(-50%); /* Move para trás metade da própria largura */
-            width: 40%;
-            height: 35vh; /* 35% da altura da tela */
-            z-index: 5;
-            touch-action: none; /* Para controlar o comportamento de toque */
+   .player-section {
+    position: fixed !important;  
+    top: 74px !important; /* Altura do header */
+    left: 50% !important; /* Centraliza a seção */
+    transform: translateX(-50%) !important; /* Move para trás metade da própria largura */
+    width: 35% !important; /* Mantém 40% da largura da tela */
+    height: 35vh !important; /* 35% da altura da tela */
+    z-index: 5 !important;
+    touch-action: none !important; /* Para controlar o comportamento de toque */
+
+
+
         }
-        .player-container {
-            width: 80%;
-            height: 100%;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
+    .player-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background: black;
+    overflow: hidden;
+
+
         }
         .video-js, #youtubePlayer {
-            width: 100%;
+            width: 40%;
             height: 100%;
         }
        #globoplayBanner {
