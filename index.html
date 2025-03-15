@@ -302,8 +302,8 @@ function loadChannel(index) {
         let { videoId, playlistId } = extractYoutubeId(url);
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        // Adicionamos enablejsapi=1 para poder controlar o som
-        let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&controls=1`;
+        // Adicionamos enablejsapi=1 para permitir controle e autoplay=1 para iniciar automaticamente
+        let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&controls=1&playsinline=1`;
 
         if (playlistId) {
             embedUrl += `&list=${playlistId}&loop=1&playlist=${playlistId}`;
@@ -317,9 +317,10 @@ function loadChannel(index) {
 
         if (isMobile) {
             setTimeout(() => {
-                const iframe = document.getElementById("ytPlayer");
-                iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
-            }, 2000); // Delay para garantir que o player carregue antes de tentar desmutar
+                const iframe = document.getElementById("ytPlayer").contentWindow;
+                iframe.postMessage('{"event":"command","func":"playVideo","args":""}', '*'); // Força o autoplay
+                iframe.postMessage('{"event":"command","func":"unMute","args":""}', '*'); // Garante que o som seja ativado
+            }, 2000);
         }
     } else {
         youtubePlayerDiv.style.display = "none";
@@ -331,6 +332,7 @@ function loadChannel(index) {
 
     globoplayBanner.style.display = name.toUpperCase() === "GLOBO" ? "block" : "none";
 }
+
 
         function showChannelIndicator(channelName) {
             channelIndicator.textContent = channelName;
